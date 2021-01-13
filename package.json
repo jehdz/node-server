@@ -1,0 +1,23 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jehdz/node-server.git"
+  },
+  "author": "Jose Hernandez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jehdz/node-server/issues"
+  },
+  "homepage": "https://github.com/jehdz/node-server#readme"
+}

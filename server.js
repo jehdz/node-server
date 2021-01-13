@@ -45,20 +45,46 @@
 //     res.send(user)
 // });
 
+
+
+//it gets the request of the website, we can do whatever we want with it.
+// Then we hit next and express keeps running through the routes
+// app.use((req, res, next) => {
+//     console.log('hello');
+//     next();
+// })
+//
+// app.get('/', (req, res) => {
+//     res.send('testing')
+// });
+
+
+//getting the post request to work
 const express = require('express');
 
 const app = express();
 
-//it gets the request of the website, we can do whatever we want with it.
-// Then we hit next and express keeps running through the routes
-app.use((req, res, next) => {
-    console.log('hello');
-    next();
-})
 
 app.get('/', (req, res) => {
-    res.send('testing')
+    res.send('getting root')
 });
+
+app.get('/profile', (req, res) => {
+    res.send('getting profile')
+});
+
+app.post('/profile', (req, res) => {
+    //we can send html or we can send objects
+    // res.send('<h1> Hellloooooo </h1>')
+
+    console.log(req.body);
+        const user = {
+        name: 'jose',
+        hobby: 'coding'
+    }
+    res.send(user)
+});
+
 
 app.listen(3000);
 

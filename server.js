@@ -64,6 +64,9 @@ const express = require('express');
 
 const app = express();
 
+//this is the middleware package we use to access reqw.body
+app.use(express.urlencoded({extended: false})); //this is how we let postman know we are working with url encoded fromat
+app.use(express.json()); //this is how we let postman know we're working with json format
 
 app.get('/', (req, res) => {
     res.send('getting root')
@@ -77,12 +80,14 @@ app.post('/profile', (req, res) => {
     //we can send html or we can send objects
     // res.send('<h1> Hellloooooo </h1>')
 
+
+    //to access this information we simply do
+    //but if we want to access req.body, we need to use a middleware
+    //express added it to its code
+
     console.log(req.body);
-        const user = {
-        name: 'jose',
-        hobby: 'coding'
-    }
-    res.send(user)
+
+    res.send('Successfully sent')
 });
 
 
